@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "run_id": "techqa_evidence_reranker_v1",
+  "source_phase2": {
+    "run_id": "techqa_adaptive_v1",
+    "config_sha256": "be12b0ca2a37713da0702a5d3991e1e38292bc3bd424ba3dc79ad22daf1fbe72",
+    "partition_sha256": "22a8042d85fc27cc5dedaff1a94e576f6e7859866f36bfcc7bb2d4357b9fe310",
+    "development_retrieval": "results/eaai_phase2/techqa_adaptive_v1/retrieval_development.jsonl",
+    "validation_retrieval": "results/eaai_phase2/techqa_adaptive_v1/retrieval_heldout_test.jsonl"
+  },
+  "dataset": {
+    "name": "techqa",
+    "source": "nvidia/TechQA-RAG-Eval",
+    "split": "train",
+    "revision": "0b5bbc84b7f07d6d09d063130e90b716d8d4a32a",
+    "expected_eligible_rows": 608,
+    "expected_documents": 496
+  },
+  "partition": {
+    "training_size": 200,
+    "validation_size": 200,
+    "development_total": 400,
+    "reserve_size": 208
+  },
+  "chunkers": [
+    "fixed_128",
+    "fixed_254",
+    "recursive_254",
+    "sentence_254"
+  ],
+  "retrieval": {
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_model_revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+    "chunking_tokenizer": "sentence-transformers/all-MiniLM-L6-v2",
+    "chunking_tokenizer_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "query_prefix": "Represent this sentence for searching relevant passages: ",
+    "candidate_pool_size": 20,
+    "final_top_k": 4,
+    "dense_weight": 0.6,
+    "bm25_weight": 0.4,
+    "rrf_k": 60.0
+  },
+  "evidence_labels": {
+    "grade_2": "normalized_reference_sequence_visible",
+    "grade_1": "gold_document_without_visible_reference",
+    "grade_0": "neither",
+    "deduplicate": "normalized_chunk_text_within_question",
+    "max_negatives": 7
+  },
+  "reranker": {
+    "model": "Qwen/Qwen3-Reranker-0.6B",
+    "revision": "e61197ed45024b0ed8a2d74b80b4d909f1255473",
+    "instruction": "Given a technical-support question, rank passages by whether they contain sufficient evidence to answer it.",
+    "max_length": 512,
+    "dtype": "bfloat16",
+    "lora_rank": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "effective_batch_size": 32,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "learning_rates": [
+      0.00005,
+      0.0001
+    ],
+    "epochs": [
+      1,
+      2,
+      3
+    ],
+    "selection_metric": "question_mean_graded_ndcg_at_4",
+    "tie_break": [
+      "fewer_epochs",
+      "lower_learning_rate"
+    ],
+    "seeds": [
+      20260904,
+      20260905,
+      20260906
+    ],
+    "primary_seed": 20260904
+  },
+  "baselines": [
+    {
+      "id": "hybrid_rrf",
+      "kind": "hybrid"
+    },
+    {
+      "id": "minilm_generic",
+      "kind": "cross_encoder",
+      "model": "cross-encoder/ms-marco-MiniLM-L6-v2",
+      "revision": "c5ee24cb16019beea0893ab7796b1df96625c6b8"
+    },
+    {
+      "id": "qwen3_unadapted",
+      "kind": "qwen3_reranker",
+      "model": "Qwen/Qwen3-Reranker-0.6B",
+      "revision": "e61197ed45024b0ed8a2d74b80b4d909f1255473",
+      "instruction": "Given a technical-support question, rank passages by whether they contain sufficient evidence to answer it."
+    }
+  ],
+  "comparator_selection": {
+    "split": "validation",
+    "endpoint": "question_mean_token_f1_over_four_chunkers",
+    "direction": "maximum",
+    "tie_break_order": [
+      "hybrid_rrf",
+      "minilm_generic",
+      "qwen3_unadapted"
+    ]
+  },
+  "generator": {
+    "model": "Qwen/Qwen3.5-9B",
+    "revision": "1eb6d84878284892ecfd4c3fb760ffbf34548234",
+    "dtype": "bfloat16",
+    "thinking": false,
+    "do_sample": false,
+    "temperature": 0.0,
+    "num_beams": 1,
+    "answer_style": "complete",
+    "max_input_tokens": 1536,
+    "max_new_tokens": 512
+  },
+  "statistics": {
+    "endpoint": "token_f1",
+    "aggregation": "mean_over_four_chunkers_within_question",
+    "minimum_effect": 0.01,
+    "alpha": 0.05,
+    "confidence": 0.95,
+    "bootstrap_draws": 20000,
+    "bootstrap_seed": 20260907,
+    "randomization_draws": 100000,
+    "randomization_seed": 20260908
+  },
+  "human": {
+    "total_cases": 100,
+    "cases_per_chunker": 25,
+    "selection_salt": "eaai-phase3-human-selection-v1",
+    "blinding_salt": "eaai-phase3-human-blinding-v1",
+    "raters": 2,
+    "score_values": [
+      0,
+      1,
+      2
+    ],
+    "dimensions": [
+      "correctness",
+      "groundedness"
+    ],
+    "agreement": "quadratic_weighted_cohen_kappa"
+  },
+  "artifact_policy": {
+    "private_row_hash": "sha256_canonical_json",
+    "public_export": "aggregate_only_without_benchmark_text_or_identifiers",
+    "reserve_requires_verified_freeze": true
+  }
+}

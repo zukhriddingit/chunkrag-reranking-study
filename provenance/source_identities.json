@@ -1,0 +1,353 @@
+{
+  "classification": "Source identity ledger for selected files, not a scientific freeze",
+  "files": [
+    {
+      "destination": "aggregates/phase3_corrected_NDCG.csv",
+      "source": "outputs/poststudy_synthesis_20260908_v1/tables/phase3_corrected_NDCG.csv",
+      "sha256": "c6fc10c4bce02b9ea762fd7d553f8912e71f52aa04812da4e358663dcafedd54",
+      "scope": "sealed non-human aggregate CSV; unchanged"
+    },
+    {
+      "destination": "aggregates/phase3_evidence_flow.csv",
+      "source": "outputs/poststudy_synthesis_20260908_v1/tables/phase3_evidence_flow.csv",
+      "sha256": "4afd010d7d58a530d2a3bd92be53b4a11524743ed2493f809e0a67dd481fcfee",
+      "scope": "sealed non-human aggregate CSV; unchanged"
+    },
+    {
+      "destination": "aggregates/phase3_primary.csv",
+      "source": "outputs/poststudy_synthesis_20260908_v1/tables/phase3_primary.csv",
+      "sha256": "f8dc7e6bea84a62bf74663da37051c758e4a063fc212afbfdacfa920ad572428",
+      "scope": "sealed non-human aggregate CSV; unchanged"
+    },
+    {
+      "destination": "aggregates/phase4_all_pairwise_descriptive.csv",
+      "source": "outputs/poststudy_synthesis_20260908_v1/tables/phase4_all_pairwise_descriptive.csv",
+      "sha256": "74f62b00d97a23ea8bdadc297bc280e09ca7b0b642b86c734b90f8ae4a17a567",
+      "scope": "sealed non-human aggregate CSV; unchanged"
+    },
+    {
+      "destination": "aggregates/phase4_associations.csv",
+      "source": "outputs/poststudy_synthesis_20260908_v1/tables/phase4_associations.csv",
+      "sha256": "e846e7f38accb75ec0a45a9771da74307eb2650a4f4125ca94d3543fbfb6d25e",
+      "scope": "sealed non-human aggregate CSV; unchanged"
+    },
+    {
+      "destination": "aggregates/phase4_chunker_effects.csv",
+      "source": "outputs/poststudy_synthesis_20260908_v1/tables/phase4_chunker_effects.csv",
+      "sha256": "28ddd7575d6720f856c9ddea6e0d2580bd111cd41edf2ca22e8f773bc34c2c92",
+      "scope": "sealed non-human aggregate CSV; unchanged"
+    },
+    {
+      "destination": "aggregates/phase4_chunker_methods.csv",
+      "source": "outputs/poststudy_synthesis_20260908_v1/tables/phase4_chunker_methods.csv",
+      "sha256": "b0e5bb1588de98b71ceb76315c97b95a5bf6b3332931cb30a5345291da4d75d0",
+      "scope": "sealed non-human aggregate CSV; unchanged"
+    },
+    {
+      "destination": "aggregates/phase4_domain_effects.csv",
+      "source": "outputs/poststudy_synthesis_20260908_v1/tables/phase4_domain_effects.csv",
+      "sha256": "28a70e69265906918644791c68eddb3e9f524eb7707daa76b4b8ad45c38125b8",
+      "scope": "sealed non-human aggregate CSV; unchanged"
+    },
+    {
+      "destination": "aggregates/phase4_domain_methods.csv",
+      "source": "outputs/poststudy_synthesis_20260908_v1/tables/phase4_domain_methods.csv",
+      "sha256": "1f87e2600f8fc99d53d13575960a6bda0d349be6614be9293c33ced2307e3fd6",
+      "scope": "sealed non-human aggregate CSV; unchanged"
+    },
+    {
+      "destination": "aggregates/phase4_evidence_flow.csv",
+      "source": "outputs/poststudy_synthesis_20260908_v1/tables/phase4_evidence_flow.csv",
+      "sha256": "c0ea2350cc72622152bebc941ca5dd1ee7c7366276db2854de7f8da57be8b064",
+      "scope": "sealed non-human aggregate CSV; unchanged"
+    },
+    {
+      "destination": "aggregates/phase4_generation.csv",
+      "source": "outputs/poststudy_synthesis_20260908_v1/tables/phase4_generation.csv",
+      "sha256": "bccdb2696ef62fb6cf786845fc4c6165ae2a9e135e363202f5d41f4a99736ce3",
+      "scope": "sealed non-human aggregate CSV; unchanged"
+    },
+    {
+      "destination": "aggregates/phase4_generation_cost.csv",
+      "source": "outputs/poststudy_synthesis_20260908_v1/tables/phase4_generation_cost.csv",
+      "sha256": "19e4eb5a58bcb84f74d46de4d448841bfc803082e7e885d464121a1dadee97da",
+      "scope": "sealed non-human aggregate CSV; unchanged"
+    },
+    {
+      "destination": "aggregates/phase4_methods.csv",
+      "source": "outputs/poststudy_synthesis_20260908_v1/tables/phase4_methods.csv",
+      "sha256": "b82b71c4ccac2b95ea5e33300f61074ae2b8b1dd2898c340994bc5d0e8ba133a",
+      "scope": "sealed non-human aggregate CSV; unchanged"
+    },
+    {
+      "destination": "aggregates/phase4_overlap.csv",
+      "source": "outputs/poststudy_synthesis_20260908_v1/tables/phase4_overlap.csv",
+      "sha256": "810e212eafe05d1d3fe73345f0d0990d93491544bc5ce53c4baf1d80d98778d6",
+      "scope": "sealed non-human aggregate CSV; unchanged"
+    },
+    {
+      "destination": "aggregates/phase4_primary.csv",
+      "source": "outputs/poststudy_synthesis_20260908_v1/tables/phase4_primary.csv",
+      "sha256": "a9a24d49be9eea232792ee097c249ac948dee7997ac34d008e71111e10488fb1",
+      "scope": "sealed non-human aggregate CSV; unchanged"
+    },
+    {
+      "destination": "aggregates/phase4_reranking_cost.csv",
+      "source": "outputs/poststudy_synthesis_20260908_v1/tables/phase4_reranking_cost.csv",
+      "sha256": "0c2bd8c620f21b09621268a23731ad8131518e0719bb066817b5e6d5be87829d",
+      "scope": "sealed non-human aggregate CSV; unchanged"
+    },
+    {
+      "destination": "aggregates/phase4_retrieval_cost.csv",
+      "source": "outputs/poststudy_synthesis_20260908_v1/tables/phase4_retrieval_cost.csv",
+      "sha256": "8e44672da721e03ec46a7a20fdb85d53554d83129e442189d3038a82ad24e94e",
+      "scope": "sealed non-human aggregate CSV; unchanged"
+    },
+    {
+      "destination": "aggregates/phase4_seed_effects.csv",
+      "source": "outputs/poststudy_synthesis_20260908_v1/tables/phase4_seed_effects.csv",
+      "sha256": "11fd7259da75f3cacb9c1f12b640a466a37ae5a4c00a5501a5846f7065332adb",
+      "scope": "sealed non-human aggregate CSV; unchanged"
+    },
+    {
+      "destination": "aggregates/phase4_seed_methods.csv",
+      "source": "outputs/poststudy_synthesis_20260908_v1/tables/phase4_seed_methods.csv",
+      "sha256": "c0421d0d39d5e0fce927882a0b500c191978713743f5aa83f57886cdf01f06a6",
+      "scope": "sealed non-human aggregate CSV; unchanged"
+    },
+    {
+      "destination": "aggregates/phase4_training_cost.csv",
+      "source": "outputs/poststudy_synthesis_20260908_v1/tables/phase4_training_cost.csv",
+      "sha256": "ce11eb00d57c6816528b1ffe05a20185b6f220f656d8c97aa21d36f0038fed46",
+      "scope": "sealed non-human aggregate CSV; unchanged"
+    },
+    {
+      "destination": "figures/phase4_evidence_flow.pdf",
+      "source": "outputs/poststudy_synthesis_20260908_v1/figures/phase4_evidence_flow.pdf",
+      "sha256": "a37aed4744ade243415f6d7cf2c29eac1d0422e2a648d281127da462580df721",
+      "scope": "sealed aggregate figure; unchanged"
+    },
+    {
+      "destination": "figures/phase4_evidence_flow.png",
+      "source": "outputs/poststudy_synthesis_20260908_v1/figures/phase4_evidence_flow.png",
+      "sha256": "cb271647b04d3dcd451b1c55a0755e42d18278640bb8a157166f40203d4eead3",
+      "scope": "sealed aggregate figure; unchanged"
+    },
+    {
+      "destination": "figures/phase4_methods.pdf",
+      "source": "outputs/poststudy_synthesis_20260908_v1/figures/phase4_methods.pdf",
+      "sha256": "097c6fb6790a7d8e918c2973ca3917f3930193ebddd8cfea9eb485c906122f28",
+      "scope": "sealed aggregate figure; unchanged"
+    },
+    {
+      "destination": "figures/phase4_methods.png",
+      "source": "outputs/poststudy_synthesis_20260908_v1/figures/phase4_methods.png",
+      "sha256": "d0680d5d8cc2f5dbac719327ea1b877375e237a8f98e8720a52acfb4e38bdb83",
+      "scope": "sealed aggregate figure; unchanged"
+    },
+    {
+      "destination": "figures/separate_primary_intervals.pdf",
+      "source": "outputs/poststudy_synthesis_20260908_v1/figures/separate_primary_intervals.pdf",
+      "sha256": "621906c9c3131aeef67e690210b1e3274f50eba555d91c4981690fbd5f1c3bab",
+      "scope": "sealed aggregate figure; unchanged"
+    },
+    {
+      "destination": "figures/separate_primary_intervals.png",
+      "source": "outputs/poststudy_synthesis_20260908_v1/figures/separate_primary_intervals.png",
+      "sha256": "572d3315c50d8f270b49909f42a9809e71983b4bf0ba3945137a5a4b0b5d2048",
+      "scope": "sealed aggregate figure; unchanged"
+    },
+    {
+      "destination": "documentation/figure_captions_v1.md",
+      "source": "outputs/poststudy_synthesis_20260908_v1/analysis/figure_captions_v1.md",
+      "sha256": "1c6fbf58bc9a017772eda63dc6e1edc3e23b8fcfbfcbdc4601719762865896f5",
+      "scope": "reference copy"
+    },
+    {
+      "destination": "documentation/exploratory_analysis_specification_v1.md",
+      "source": "outputs/poststudy_synthesis_20260908_v1/analysis/exploratory_analysis_specification_v1.md",
+      "sha256": "7eeb0e3fa5935ad0c408bb0a61b75484e8e147b88a20e59f142b49bb8c5e72a0",
+      "scope": "reference copy"
+    },
+    {
+      "destination": "code/phase4_preparation/configs/eaai_phase2/techqa_adaptive_v1.json",
+      "source": "outputs/01a06a4b-73f7-7e23-a621-6e892e50f47f/phase4_full_execution_v1/source/configs/eaai_phase2/techqa_adaptive_v1.json",
+      "sha256": "baa8596f6f978fd81c9cab82288c9bdb6872a910727e638555579175e174b5fa",
+      "scope": "local preparation bundle; NOT complete executed repaired runtime"
+    },
+    {
+      "destination": "code/phase4_preparation/configs/eaai_phase4/phase4_full_execution_v1.json",
+      "source": "outputs/01a06a4b-73f7-7e23-a621-6e892e50f47f/phase4_full_execution_v1/source/configs/eaai_phase4/phase4_full_execution_v1.json",
+      "sha256": "5820ef0c0901689b46e155ab0c2e09d818698a3652a75e3071804ea11c835cb2",
+      "scope": "local preparation bundle; NOT complete executed repaired runtime"
+    },
+    {
+      "destination": "code/phase4_preparation/scripts/build_phase4_full_bundle.py",
+      "source": "outputs/01a06a4b-73f7-7e23-a621-6e892e50f47f/phase4_full_execution_v1/source/scripts/build_phase4_full_bundle.py",
+      "sha256": "88ef24e2e18a63a3e9ac4b4d0da4e29fc31bbb6a2f002d64960e43ee882cd37a",
+      "scope": "local preparation bundle; NOT complete executed repaired runtime"
+    },
+    {
+      "destination": "code/phase4_preparation/scripts/prepare_phase4_full.py",
+      "source": "outputs/01a06a4b-73f7-7e23-a621-6e892e50f47f/phase4_full_execution_v1/source/scripts/prepare_phase4_full.py",
+      "sha256": "fd3fd518207cf702d8ec853b43a676fce7455f8b8831135bdf5c1d0a4f7fe31c",
+      "scope": "local preparation bundle; NOT complete executed repaired runtime"
+    },
+    {
+      "destination": "code/phase4_preparation/scripts/run_phase4_full.py",
+      "source": "outputs/01a06a4b-73f7-7e23-a621-6e892e50f47f/phase4_full_execution_v1/source/scripts/run_phase4_full.py",
+      "sha256": "77ab5bb669f6a272cef08e096c22cbcd007231a37dd41b8029435c1657054777",
+      "scope": "local preparation bundle; NOT complete executed repaired runtime"
+    },
+    {
+      "destination": "code/phase4_preparation/scripts/run_phase4_smoke.py",
+      "source": "outputs/01a06a4b-73f7-7e23-a621-6e892e50f47f/phase4_full_execution_v1/source/scripts/run_phase4_smoke.py",
+      "sha256": "1e81d31473b65a1adad1228b18a913edc85d4762cfb1084964082eabf40b65ff",
+      "scope": "local preparation bundle; NOT complete executed repaired runtime"
+    },
+    {
+      "destination": "code/phase4_preparation/src/chunkrag/__init__.py",
+      "source": "outputs/01a06a4b-73f7-7e23-a621-6e892e50f47f/phase4_full_execution_v1/source/src/chunkrag/__init__.py",
+      "sha256": "368b16e602dfc7a398aaa5ee844f0dd4cab1482ca0ecb9c0f5c76a7bad324f0e",
+      "scope": "local preparation bundle; NOT complete executed repaired runtime"
+    },
+    {
+      "destination": "code/phase4_preparation/src/chunkrag/chunking.py",
+      "source": "outputs/01a06a4b-73f7-7e23-a621-6e892e50f47f/phase4_full_execution_v1/source/src/chunkrag/chunking.py",
+      "sha256": "491178215cebe0769bed7cf21ff6c309723b2223b998393c94ea909a8b2bd6bb",
+      "scope": "local preparation bundle; NOT complete executed repaired runtime"
+    },
+    {
+      "destination": "code/phase4_preparation/src/chunkrag/eaai_phase3/evidence.py",
+      "source": "outputs/01a06a4b-73f7-7e23-a621-6e892e50f47f/phase4_full_execution_v1/source/src/chunkrag/eaai_phase3/evidence.py",
+      "sha256": "67e00320a0aea014412159731bf022298b5aad71026cc029d652d281f32c1777",
+      "scope": "local preparation bundle; NOT complete executed repaired runtime"
+    },
+    {
+      "destination": "code/phase4_preparation/src/chunkrag/eaai_phase3/generation_runtime.py",
+      "source": "outputs/01a06a4b-73f7-7e23-a621-6e892e50f47f/phase4_full_execution_v1/source/src/chunkrag/eaai_phase3/generation_runtime.py",
+      "sha256": "711214e23892bb90b56b317b1df2f161ad0d36656a1e2067fe1ff907ae7db094",
+      "scope": "local preparation bundle; NOT complete executed repaired runtime"
+    },
+    {
+      "destination": "code/phase4_preparation/src/chunkrag/eaai_phase4/__init__.py",
+      "source": "outputs/01a06a4b-73f7-7e23-a621-6e892e50f47f/phase4_full_execution_v1/source/src/chunkrag/eaai_phase4/__init__.py",
+      "sha256": "f09d135639f14b12a93ac09144c37f290004cb34ef1993aaae017a97954d9c7e",
+      "scope": "local preparation bundle; NOT complete executed repaired runtime"
+    },
+    {
+      "destination": "code/phase4_preparation/src/chunkrag/eaai_phase4/dialogue_contract.py",
+      "source": "outputs/01a06a4b-73f7-7e23-a621-6e892e50f47f/phase4_full_execution_v1/source/src/chunkrag/eaai_phase4/dialogue_contract.py",
+      "sha256": "55bf9f777df18a2a8fafdfb42f16a9d5755aaeb1db72b57cb5512e9b87ed45b8",
+      "scope": "local preparation bundle; NOT complete executed repaired runtime"
+    },
+    {
+      "destination": "code/phase4_preparation/src/chunkrag/eaai_phase4/full_execution.py",
+      "source": "outputs/01a06a4b-73f7-7e23-a621-6e892e50f47f/phase4_full_execution_v1/source/src/chunkrag/eaai_phase4/full_execution.py",
+      "sha256": "da3293c7e7667380afce04d3477bbcaae5a361c3f7b436ae9ebec5fbdfe6ea17",
+      "scope": "local preparation bundle; NOT complete executed repaired runtime"
+    },
+    {
+      "destination": "code/phase4_preparation/src/chunkrag/eaai_phase4/preprocessing.py",
+      "source": "outputs/01a06a4b-73f7-7e23-a621-6e892e50f47f/phase4_full_execution_v1/source/src/chunkrag/eaai_phase4/preprocessing.py",
+      "sha256": "bcd29e151b944e7ca1deac0955963eaa92c53e497a8ffbdeb7a0011a35b9eddc",
+      "scope": "local preparation bundle; NOT complete executed repaired runtime"
+    },
+    {
+      "destination": "code/phase4_preparation/src/chunkrag/eaai_phase4/statistics.py",
+      "source": "outputs/01a06a4b-73f7-7e23-a621-6e892e50f47f/phase4_full_execution_v1/source/src/chunkrag/eaai_phase4/statistics.py",
+      "sha256": "789947fdd5777fc8667af0b92afb03e821744eb9f29f5758f6e03867908c93a8",
+      "scope": "local preparation bundle; NOT complete executed repaired runtime"
+    },
+    {
+      "destination": "code/phase4_preparation/src/chunkrag/eaai_phase4/training_contract.py",
+      "source": "outputs/01a06a4b-73f7-7e23-a621-6e892e50f47f/phase4_full_execution_v1/source/src/chunkrag/eaai_phase4/training_contract.py",
+      "sha256": "eb8e0cab69953344fcf5f247668673e84c76a2953bbf03621d13dfb8156e4075",
+      "scope": "local preparation bundle; NOT complete executed repaired runtime"
+    },
+    {
+      "destination": "code/phase4_preparation/src/chunkrag/retrieval.py",
+      "source": "outputs/01a06a4b-73f7-7e23-a621-6e892e50f47f/phase4_full_execution_v1/source/src/chunkrag/retrieval.py",
+      "sha256": "07e5b9c917f75c4786adba4d8dc86e8c6e841050d657c1732349c8302c5ec12c",
+      "scope": "local preparation bundle; NOT complete executed repaired runtime"
+    },
+    {
+      "destination": "code/phase4_preparation/src/chunkrag/schemas.py",
+      "source": "outputs/01a06a4b-73f7-7e23-a621-6e892e50f47f/phase4_full_execution_v1/source/src/chunkrag/schemas.py",
+      "sha256": "2ed9e03cdd5c91932b74cb0a02018bee79d1df0ae68d97093e9daa0185479a87",
+      "scope": "local preparation bundle; NOT complete executed repaired runtime"
+    },
+    {
+      "destination": "code/phase4_preparation/src/chunkrag/text_utils.py",
+      "source": "outputs/01a06a4b-73f7-7e23-a621-6e892e50f47f/phase4_full_execution_v1/source/src/chunkrag/text_utils.py",
+      "sha256": "1673cfbd1961e86a51499bea0a808ed56de3e11ef4bb36b5a617d9f89deaf62f",
+      "scope": "local preparation bundle; NOT complete executed repaired runtime"
+    },
+    {
+      "destination": "code/phase4_preparation/tests/test_phase4_full_execution.py",
+      "source": "outputs/01a06a4b-73f7-7e23-a621-6e892e50f47f/phase4_full_execution_v1/source/tests/test_phase4_full_execution.py",
+      "sha256": "57fcba51443996afe789e1d6b954d8aa407a0c85478b011186d6330234ec3fe2",
+      "scope": "local preparation bundle; NOT complete executed repaired runtime"
+    },
+    {
+      "destination": "code/phase3_analysis/src/chunkrag/eaai_phase3/analysis.py",
+      "source": "outputs/01a06a4b-73f7-7e23-a621-6e892e50f47f/phase3_primary_metric_reconciliation_v1/private/verified_inputs/src/chunkrag/eaai_phase3/analysis.py",
+      "sha256": "945abf227fe8e6a2f778b9266b3862ba33b3d8987c69d83165e7ffce5bf13676",
+      "scope": "retained reconciliation input source; dependencies incomplete"
+    },
+    {
+      "destination": "code/phase3_analysis/src/chunkrag/eaai_phase3/runtime.py",
+      "source": "outputs/01a06a4b-73f7-7e23-a621-6e892e50f47f/phase3_primary_metric_reconciliation_v1/private/verified_inputs/src/chunkrag/eaai_phase3/runtime.py",
+      "sha256": "4b0a06fff9108c14160622bb509cc4af5031daa317991fd05197791f3f2a215b",
+      "scope": "retained reconciliation input source; dependencies incomplete"
+    },
+    {
+      "destination": "code/phase3_analysis/src/chunkrag/eaai_phase3/statistics.py",
+      "source": "outputs/01a06a4b-73f7-7e23-a621-6e892e50f47f/phase3_primary_metric_reconciliation_v1/private/verified_inputs/src/chunkrag/eaai_phase3/statistics.py",
+      "sha256": "203ad49326e0eb5c4d5a81c2b53f63a840da1f0ab022953396452096e8809a5c",
+      "scope": "retained reconciliation input source; dependencies incomplete"
+    },
+    {
+      "destination": "code/phase3_analysis/src/chunkrag/generation.py",
+      "source": "outputs/01a06a4b-73f7-7e23-a621-6e892e50f47f/phase3_primary_metric_reconciliation_v1/private/verified_inputs/src/chunkrag/generation.py",
+      "sha256": "8798879e6d94c33273fabae0c4cd2a4188a3dee6e69a6a470cf24f69b1939a21",
+      "scope": "retained reconciliation input source; dependencies incomplete"
+    },
+    {
+      "destination": "code/phase3_analysis/configs/techqa_evidence_reranker_v1.json",
+      "source": "outputs/01a06a4b-73f7-7e23-a621-6e892e50f47f/phase3_primary_metric_reconciliation_v1/private/verified_inputs/configs/eaai_phase3/techqa_evidence_reranker_v1.json",
+      "sha256": "c3916702193483dce98f62d17541829393e14fed48ffdbe38e74fc4e142bedb5",
+      "scope": "reference copy"
+    },
+    {
+      "destination": "code/phase3_ndcg_correction/src/chunkrag/eaai_phase3/ndcg_correction.py",
+      "source": "chunkrag-eaai-ndcg-correction-v1/src/chunkrag/eaai_phase3/ndcg_correction.py",
+      "sha256": "b56c4d8e9254bc0fa0f2f1399f1778f8d167aa1bac992a98af745471fb011417",
+      "scope": "versioned correction reference; original correction preserved"
+    },
+    {
+      "destination": "code/phase3_ndcg_correction/patches/reserve_ndcg_common_pool_v1.patch",
+      "source": "chunkrag-eaai-ndcg-correction-v1/patches/reserve_ndcg_common_pool_v1.patch",
+      "sha256": "a24a39a866426bf9cf98842c87e422112e0ddd0c04a1a2a11121f35c17415d74",
+      "scope": "versioned correction reference; original correction preserved"
+    },
+    {
+      "destination": "code/poststudy/cpu_diagnostics_v2.py",
+      "source": "outputs/poststudy_synthesis_20260908_v1/source/cpu_diagnostics_v2.py",
+      "sha256": "7774061ebcc330a953f19f68701eb89cafc7ec3562ff39a73155715210f907df",
+      "scope": "historical exploratory analysis source; requires restricted inputs and notebook bindings; not executed"
+    },
+    {
+      "destination": "environment/manuscript_cpu_runtime.json",
+      "source": "outputs/prompt11_readiness_revision_20260908_v1/audit/runtime_versions.json",
+      "sha256": "fb39281e8276ae6f17cc1fd4f92d7a921c58e649231b9d03cdcf10556943600b",
+      "scope": "recorded CPU manuscript environment only"
+    },
+    {
+      "destination": "protocols/phase4_execution_ready_protocol_v2.json",
+      "source": "outputs/01a06a4b-73f7-7e23-a621-6e892e50f47f/phase4_development_smoke_report_v1/protocol/phase4_execution_ready_protocol_v2.json",
+      "sha256": "87cbc55f57526fe31af3931df4157a2216db146038376d42a1b66a1844373a6a",
+      "scope": "historical pre-execution finalized protocol"
+    }
+  ]
+}

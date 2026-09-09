@@ -1,0 +1,2 @@
+comparison,n_questions,comparator_F1,evidence_F1,difference,CI_low,CI_high,p,success
+E-aware minus hybrid_rrf,208,0.320140383405,0.326982506452,0.00684212304685,-0.00330052817959,0.0172442343175,0.19556804432,False

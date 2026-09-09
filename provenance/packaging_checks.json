@@ -1,0 +1,13 @@
+{
+  "status": "PASS_LOCAL_PACKAGE_CHECKS_RELEASE_PENDING",
+  "copied_originals_unchanged": 58,
+  "metadata_sources_unchanged": 3,
+  "csv_tables": 20,
+  "python_files_parsed_not_imported": 25,
+  "automated_identifier_secret_hits": [],
+  "scan_limits": "Whitelisted source/aggregate files, field/header inspection and known-pattern text scan. Not a comprehensive rights audit or a proof of absence of every possible identifying string. Aggregate figures are unchanged previously inspected artifacts.",
+  "excluded": "Human records and provisional human tables, raw rows, weights, identities/contact details, author confirmations and workspace audit files.",
+  "scientific_execution": false,
+  "remaining_release_gates": "Specific destination account/record and separate public-release instruction; ownership and license selection confirmed by user.",
+  "scope_note": "Inherited v1 screening; applies to original candidate content. V2 adds intentional author attribution/citation names and license legal text; see v2 checks."
+}

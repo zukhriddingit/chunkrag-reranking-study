@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "run_id": "techqa_adaptive_v1",
+  "protocol_commit": "5df8cc7bf5f26a1b3cde37df2023cd6590352ad2",
+  "baseline_tree_sha256": "7572ec911f852c9d420c6728f74fedbfbc88f2652e2df4b9b4963a363fda9ac6",
+  "dataset": {
+    "name": "techqa",
+    "source": "nvidia/TechQA-RAG-Eval",
+    "split": "train",
+    "revision": "0b5bbc84b7f07d6d09d063130e90b716d8d4a32a",
+    "expected_eligible_rows": 608,
+    "expected_documents": 496
+  },
+  "partition": {
+    "development_size": 200,
+    "heldout_test_size": 200,
+    "reserve_size": 208
+  },
+  "retrieval": {
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_model_revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+    "chunking_tokenizer": "sentence-transformers/all-MiniLM-L6-v2",
+    "chunking_tokenizer_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "query_prefix": "Represent this sentence for searching relevant passages: ",
+    "candidate_pool_size": 20,
+    "final_top_k": 4,
+    "dense_weight": 0.6,
+    "bm25_weight": 0.4,
+    "rrf_k": 60.0,
+    "embedding_batch_size": 64
+  },
+  "reranker": {
+    "model": "cross-encoder/ms-marco-MiniLM-L6-v2",
+    "revision": "c5ee24cb16019beea0893ab7796b1df96625c6b8",
+    "batch_size": 32
+  },
+  "chunkers": [
+    {
+      "name": "fixed_128",
+      "type": "fixed",
+      "chunk_size": 128,
+      "chunk_overlap": 19,
+      "enforce_token_limit": true
+    },
+    {
+      "name": "fixed_254",
+      "type": "fixed",
+      "chunk_size": 254,
+      "chunk_overlap": 38,
+      "enforce_token_limit": true
+    },
+    {
+      "name": "recursive_254",
+      "type": "recursive",
+      "chunk_size": 254,
+      "chunk_overlap": 38,
+      "enforce_token_limit": true
+    },
+    {
+      "name": "sentence_254",
+      "type": "sentence",
+      "chunk_size": 254,
+      "chunk_overlap": 0,
+      "enforce_token_limit": true
+    }
+  ],
+  "generators": {
+    "qwen": {
+      "model": "Qwen/Qwen2.5-1.5B-Instruct",
+      "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+      "torch_dtype": null,
+      "use_device_map": false,
+      "role": "primary"
+    },
+    "mistral": {
+      "model": "mistralai/Mistral-7B-Instruct-v0.3",
+      "revision": "c170c708c41dac9275d15a8fff4eca08d52bab71",
+      "torch_dtype": "float16",
+      "use_device_map": true,
+      "role": "secondary_replication"
+    }
+  },
+  "generation": {
+    "answer_style": "complete",
+    "max_input_tokens": 1536,
+    "max_new_tokens": 512,
+    "do_sample": false,
+    "num_beams": 1
+  },
+  "gate": {
+    "threshold": 0.5,
+    "C": 1.0,
+    "penalty": "l2",
+    "solver": "liblinear",
+    "class_weight": "balanced",
+    "max_iter": 1000,
+    "random_state": 20260809
+  },
+  "statistics": {
+    "bootstrap_draws": 20000,
+    "bootstrap_seed": 20260809,
+    "randomization_draws": 100000,
+    "randomization_seed": 20260810,
+    "confidence": 0.95
+  }
+}

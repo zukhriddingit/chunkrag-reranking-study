@@ -1,0 +1,5 @@
+method,records,mean_generated_tokens,median_generated_tokens,p95_generated_tokens,max_generated_tokens,context_truncated,empty_normalized_output,generation_length_capped,records_with_annotated_span_loss,legacy_prompt_count_2
+B,3276,89.8308913309,80,186.25,512,2,0,1,0,2234
+E,3276,90.0097680098,81,186,512,1,0,1,0,2234
+H,1092,88.4688644689,76,199.8,370,1,0,0,0,745
+U,1092,91.2564102564,79.5,193,457,1,0,0,0,745

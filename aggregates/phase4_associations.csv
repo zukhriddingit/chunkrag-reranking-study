@@ -1,0 +1,10 @@
+n,pearson,scope,spearman,x
+273,0.222450679007,document-level paired differences; overlap is raw document mean; no p-values or causal interpretation,0.176167772972,corrected_common_pool_evidence_ndcg_at_4
+250,0.264382175833,document-level paired differences; overlap is raw document mean; no p-values or causal interpretation,0.228168940984,grade2_candidate_recall
+273,0.252026787106,document-level paired differences; overlap is raw document mean; no p-values or causal interpretation,0.221424718307,selected_grade2
+273,0.293462213205,document-level paired differences; overlap is raw document mean; no p-values or causal interpretation,0.232431687458,selected_any_literal_span
+273,0.293462213205,document-level paired differences; overlap is raw document mean; no p-values or causal interpretation,0.232431687458,packed_any_literal_span
+273,0.094065257721,document-level paired differences; overlap is raw document mean; no p-values or causal interpretation,0.073856802195,target_literal_packed
+273,-0.350358393713,document-level paired differences; overlap is raw document mean; no p-values or causal interpretation,-0.470185809257,generated_tokens
+273,-0.0499158831411,document-level paired differences; overlap is raw document mean; no p-values or causal interpretation,-0.0678807797629,generation_length_capped
+273,-0.063874631975,document-level paired differences; overlap is raw document mean; no p-values or causal interpretation,-0.0668869058767,top4_overlap

@@ -1,0 +1,43 @@
+{
+  "classification": "Selected fields from sealed execution snapshot; package inventory, not a lockfile or new execution test",
+  "source_snapshot_sha256": "8cfecd3162307b228c6217a32b7a39dcc42d86390cf5799a1140b1754d9d2794",
+  "freeze_timestamp": "2026-09-07T03:38:34.935383Z",
+  "environment": {
+    "core_packages": {
+      "accelerate": "1.14.0",
+      "huggingface_hub": "1.28.0",
+      "numpy": "2.1.3",
+      "peft": "0.20.0",
+      "python": "3.13.15",
+      "torch": "2.11.0+cu128",
+      "transformers": "5.16.1"
+    },
+    "gpu_total_gib": 39.4935302734375,
+    "hardware": "NVIDIA A100-SXM4-40GB",
+    "retrieval_packages": {
+      "faiss-cpu": "1.14.3",
+      "langchain-text-splitters": "0.3.11",
+      "rank-bm25": "0.2.2",
+      "sentence-transformers": "3.4.1",
+      "spacy": "3.8.14",
+      "torchao": "0.10.0"
+    }
+  },
+  "runtime_repairs_at_freeze": [
+    {
+      "accepted_payload_encodings": [
+        "canonical_json_utf8",
+        "canonical_json_utf8_plus_jsonl_linefeed"
+      ],
+      "classification": "mechanical_integrity_verifier_repair",
+      "input_bytes_changed": false,
+      "repair_id": "phase4_row_hash_verifier_dual_canonical_v1",
+      "scientific_choices_changed": false
+    }
+  ],
+  "technical_repairs": [
+    "split_membership_assertion_v1",
+    "exclude_unused_incompatible_torchao_v1"
+  ],
+  "warning": "Recorded torchao package was excluded from runtime use by the repair; do not blindly install this inventory as a tested environment."
+}

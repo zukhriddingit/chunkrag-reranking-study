@@ -1,0 +1,78 @@
+{
+  "representation": "Parsed values reproduced from sealed snapshot; not the original remote JSON byte encoding",
+  "source_snapshot_sha256": "8cfecd3162307b228c6217a32b7a39dcc42d86390cf5799a1140b1754d9d2794",
+  "original_remote_artifact_sha256": "5f26c8647dcd87a653ca1befdd916a9a98d793e394082758841fb29a8da619a2",
+  "values": {
+    "dataset": "IBM Doc2Dial v1.0.1",
+    "primary": {
+      "decision_rule_passed": false,
+      "documents": 273,
+      "domain_effects_secondary": {
+        "dmv": -0.00630045000624396,
+        "ssa": -0.0011267221952735134,
+        "studentaid": -0.0017612779836159332,
+        "va": -0.0011313245806997432
+      },
+      "equal_domain_mean_secondary": -0.0025799436914582877,
+      "estimand": "document-weighted E-minus-B agent-response F1 averaged over four chunkers and three paired seeds",
+      "families": 235,
+      "family_cluster_bootstrap_95pct": {
+        "high": 0.0019202852812187537,
+        "low": -0.006609704843055635
+      },
+      "family_sign_flip_two_sided_p": 0.3122168778312217,
+      "interpretation_warning": "The decision rule does not prove that the population improvement is at least 0.010.",
+      "leave_one_seed_out_secondary": {
+        "20260904": -0.00505279002372914,
+        "20260905": -0.0009244270585928112,
+        "20260906": -0.0006559729583568931
+      },
+      "mean_difference": -0.0022110633468929476,
+      "schema_version": 1,
+      "seed_effects_secondary": {
+        "20260904": 0.0034723900067794356,
+        "20260905": -0.004784335923493222,
+        "20260906": -0.005321244123965058
+      },
+      "seed_range_secondary": [
+        -0.005321244123965058,
+        0.0034723900067794356
+      ],
+      "seed_sd_secondary": 0.004929330494241675
+    },
+    "privacy": "Aggregates only; no dialogue, response, document, span, or stable case identifier.",
+    "publication_status": "prepared_not_published",
+    "sample_size": 273,
+    "schema_version": 1,
+    "systems": {
+      "B": {
+        "agent_response_exact_match": 0.0006105006105006105,
+        "agent_response_f1": 0.24048690164885023,
+        "corrected_common_pool_evidence_ndcg_at_4": 0.6889059200877545,
+        "grounding_span_f1": 0.2323515514464874,
+        "records": 3276
+      },
+      "E": {
+        "agent_response_exact_match": 0.0006105006105006105,
+        "agent_response_f1": 0.2382758383019573,
+        "corrected_common_pool_evidence_ndcg_at_4": 0.611752094168001,
+        "grounding_span_f1": 0.23116607345546764,
+        "records": 3276
+      },
+      "H": {
+        "agent_response_exact_match": 0.0,
+        "agent_response_f1": 0.23571322115169852,
+        "corrected_common_pool_evidence_ndcg_at_4": 0.6496353269395453,
+        "grounding_span_f1": 0.22653625298327765,
+        "records": 1092
+      },
+      "U": {
+        "agent_response_exact_match": 0.0018315018315018315,
+        "agent_response_f1": 0.240323738578291,
+        "corrected_common_pool_evidence_ndcg_at_4": 0.6855290639824794,
+        "grounding_span_f1": 0.2329769588943859,
+        "records": 1092
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "classification": "Local licensing/metadata check, not new scientific analysis",
+  "unchanged_v1_payload_files": 65,
+  "changed_v1_files": [
+    "DATA_AVAILABILITY_DRAFT.md",
+    "README.md",
+    "RELEASE_ACCESS_MATRIX.md",
+    "RIGHTS_AND_RELEASE_GATES.md",
+    "provenance/packaging_checks.json"
+  ],
+  "all_scientific_source_results_figures_configurations_unchanged": true,
+  "citation_yaml_parse": "PASS with Ruby Psych; Python PyYAML unavailable; no environment modifications",
+  "citation_required_fields_and_author_order": "PASS",
+  "full_cff_schema_validation": "Not run",
+  "known_pattern_scan_hits": [],
+  "intentional_identifying_metadata": "Author names and affiliations in citation/attribution; this is not an anonymous review package. No email included.",
+  "licenses": "Official full texts; per-file scopes defined; third-party notices retain their terms.",
+  "public_release": "Not performed or authorized in this stage"
+}

@@ -1,0 +1,3 @@
+condition,records,common_pool_literal_visibility_rate,selected_literal_visibility_rate,packed_literal_visibility_rate,literal_loss_during_packing_rate,answer_literal_reference_rate
+comparator,832,0.283653846154,0.243990384615,0.243990384615,0,0.0216346153846
+evidence_aware,832,0.283653846154,0.252403846154,0.252403846154,0,0.0264423076923

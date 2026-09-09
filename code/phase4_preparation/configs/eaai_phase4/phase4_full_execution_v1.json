@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "execution_id": "phase4_full_execution_v1",
+  "status": "authorized_pending_freeze",
+  "authorization_date": "2026-09-06",
+  "scientific_scope": "Shared-configuration complete-pipeline H/U/B/E comparison transferring TechQA development supervision to the fixed IBM Doc2Dial v1.0.1 support-dialogue evaluation.",
+  "phase3_boundary": {
+    "release_commit": "35d21a87c2868e0a932bebab5c08692a0b255e25",
+    "freeze_file_sha256": "8bbdb36118d1f1c083c4884f7e508127e5e26e3cb2669768c396dd0e27d5e405",
+    "freeze_identity": "3afc5085a2965d341df7d2ba492cd5a25d3ac29cc44da41c04a987bf2814a621",
+    "partition_sha256": "22a8042d85fc27cc5dedaff1a94e576f6e7859866f36bfcc7bb2d4357b9fe310",
+    "preservation_inventory_tree_sha256": "febeaaa1091a09cd7e7441803e44f7db328d36f2551b51cb3466e39169b8e5da"
+  },
+  "provenance": {
+    "preflight_manifest_sha256": "730f197854e5e150e54315c2dd9a957d1b51df25ba3e6bf42c5059569a4bf333",
+    "successful_smoke_manifest_sha256": "012da8a47c63a50822ba1332a14403ccc8fa6bcb7c1bc8d0a384066737ce34d3",
+    "successful_smoke_tree_sha256": "556d63000f8352cf75675c57153ceed6416b269d29fc3ed55b7c270c1530f4e4",
+    "successful_smoke_report_manifest_sha256": "6fbf29886d6b926636949150c12224e7ef2300b6c4015c20d5f2e0f85389b502",
+    "successful_smoke_runner_sha256": "1e81d31473b65a1adad1228b18a913edc85d4762cfb1084964082eabf40b65ff",
+    "successful_smoke_bundle_sha256": "5d3f867822abc5c06aabb60accf5ddf6b424888c5a30d1314723ac53cff24471",
+    "attempts": [
+      {"id": "phase4_development_smoke_v2", "status": "FAIL", "boundary": "development-scope precheck before model load", "repair": "split_membership_assertion_v1"},
+      {"id": "phase4_development_smoke_v3", "status": "FAIL", "boundary": "after unadapted reranking and before any optimizer update", "repair": "exclude_unused_incompatible_torchao_v1"},
+      {"id": "phase4_development_smoke_v4", "status": "PASS"}
+    ]
+  },
+  "inputs": {
+    "B_training_groups_sha256": "c11a5bb4541c68b3c466f12fadac3ddfde1c85fa8a2c9e28537a3a908fc45e13",
+    "E_training_groups_sha256": "58a67253104ded82d5ecaa2ffae12f086102369a9296e01be8243579ad5c7144",
+    "B_validation_labels_sha256": "919b4eda8f5f5a7b3429bf54874c94f8cdc65d21462d10f9c7d71a425371d429",
+    "E_validation_labels_sha256": "309fbe373d831cdaad955b55c40577dc5fec8dc1aad29a8a077a06ffa00fa452",
+    "B_refit_groups_sha256": "cfffe947eacf6fba527fc82a31437a8003ec7c97a9edb821c2957e62f3e65481",
+    "E_refit_groups_sha256": "7cc6635bba8f8de8088d6b7ee9a53f4ddce6b43b1f55e3548ac833ade1e4a8b6",
+    "doc2dial_selection_index_sha256": "9f1a419825b5602ea150b8325b2720d4790a8d6d360d1ef97327c62bc79b6a4d",
+    "doc2dial_zip_url": "https://doc2dial.github.io/file/doc2dial_v1.0.1.zip",
+    "doc2dial_zip_sha256": "94499fa5259f69018d2458cb948552e7a05f424711a95a562bb9e816a515dc23",
+    "doc2dial_document_json_sha256": "547ed8ee5bfd7babdadfb6246b1b3fc5fa107a4abdef972bc63c9b717000f56f",
+    "doc2dial_validation_json_sha256": "9b4118e345af47451c84e8e27c1dba2844fcaafeacb059380b4ac8fbb9b62a16"
+  },
+  "evaluation": {
+    "sample_size": 273,
+    "domain_counts": {"dmv": 51, "ssa": 77, "studentaid": 50, "va": 95},
+    "corpus": "All 488 Doc2Dial documents across all four domains",
+    "selection": "One frozen salted-hash-selected eligible user-to-immediately-following-agent transition per eligible validation document",
+    "retrieval_query": "Dialogue history through and including the selected user turn, serialized in official-loader order as uppercase role, colon, space, utterance, with turns joined by newline",
+    "target": "Immediately following agent utterance from Doc2Dial dialogue data",
+    "inference_exclusions": ["target agent response", "future turns", "gold document identifier", "reference spans and offsets", "gold evidence grades", "doc2dial_rc answer"],
+    "project_exposure": "Aggregate metadata and the private selected-case index were inspected during CPU preflight; no model outcomes existed before execution",
+    "foundation_model_pretraining_exposure": "unknown",
+    "family_count": 235,
+    "fixed_no_optional_stopping": true
+  },
+  "retrieval": {
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "embedding_model_revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+    "chunking_tokenizer": "sentence-transformers/all-MiniLM-L6-v2",
+    "chunking_tokenizer_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "query_prefix": "Represent this sentence for searching relevant passages: ",
+    "dense_weight": 0.6,
+    "bm25_weight": 0.4,
+    "rrf_k": 60.0,
+    "embedding_batch_size": 64,
+    "candidate_pool": 20,
+    "top_k": 4,
+    "chunkers": [
+      {"name": "fixed_128", "type": "fixed", "chunk_size": 128, "chunk_overlap": 19, "enforce_token_limit": true},
+      {"name": "fixed_254", "type": "fixed", "chunk_size": 254, "chunk_overlap": 38, "enforce_token_limit": true},
+      {"name": "recursive_254", "type": "recursive", "chunk_size": 254, "chunk_overlap": 38, "enforce_token_limit": true},
+      {"name": "sentence_254", "type": "sentence", "chunk_size": 254, "chunk_overlap": 0, "enforce_token_limit": true}
+    ],
+    "tie_break": ["descending score", "ascending fused rank", "ascending chunk id"]
+  },
+  "reranker": {
+    "model": "Qwen/Qwen3-Reranker-0.6B",
+    "revision": "e61197ed45024b0ed8a2d74b80b4d909f1255473",
+    "instruction": "Given a technical-support question, rank passages by whether they contain sufficient evidence to answer it.",
+    "max_length": 512,
+    "dtype": "bfloat16",
+    "lora": {"rank": 16, "alpha": 32, "dropout": 0.05, "bias": "none", "target_modules": "all-linear"},
+    "optimizer": "AdamW",
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "warmup_rounding": "ceiling",
+    "gradient_clip_norm": 1.0,
+    "learning_rates": [0.00005, 0.0001],
+    "grid_update_budgets": [227, 454, 681],
+    "grid_seed": 20260904,
+    "refit_update_budgets": {"227": 431, "454": 862, "681": 1293},
+    "refit_seeds": [20260904, 20260905, 20260906],
+    "per_device_groups": 2,
+    "gradient_accumulation": 2,
+    "groups_per_update": 4,
+    "max_negatives": 7,
+    "sampler": "Deterministic epoch-wise shuffle with seed + 1000003*epoch; consume every group once per epoch before reshuffle; continue until the exact group-draw budget",
+    "checkpoint_every_updates": 25,
+    "preprocessing": "label_blind_dedup_pair_prune_v1",
+    "loss": "Mean across intact positive-first groups of temperature-1 cross entropy over final-token yes-minus-no scores with target index zero"
+  },
+  "selection": {
+    "rule": "For each shared learning-rate/update configuration, average B and E question-level mean corrected evidence-NDCG@4 across all 200 validation questions and four chunkers; maximize this shared mean",
+    "ties": ["fewer optimizer updates", "lower learning rate"],
+    "reselection_after_doc2dial": false
+  },
+  "generator": {
+    "model": "Qwen/Qwen3.5-9B",
+    "revision": "1eb6d84878284892ecfd4c3fb760ffbf34548234",
+    "dtype": "bfloat16",
+    "thinking": false,
+    "do_sample": false,
+    "temperature": 0.0,
+    "num_beams": 1,
+    "max_input_tokens": 1536,
+    "max_new_tokens": 512,
+    "batch_size": 4
+  },
+  "metrics": {
+    "primary_answer": "agent-response token F1",
+    "secondary_answer": ["agent-response exact match", "grounding-span token F1"],
+    "retrieval_grades": {"2": "normalized contiguous annotated grounding span appears in chunk", "1": "chunk belongs to selected gold document without grade 2", "0": "neither"},
+    "ndcg": "DCG@4 from returned top four; IDCG@4 from full common 20-candidate graded pool; zero IDCG returns 0.0"
+  },
+  "statistics": {
+    "primary_estimand": "Document-weighted mean E-minus-B agent-response token-F1 after averaging four chunkers and three paired seeds within each of 273 documents",
+    "family_definition": "Within domain, lowercase/trim title, strip terminal #digits with surrounding whitespace, normalize whitespace, prepend domain; never merge across domain",
+    "sign_flip": {"level": "family", "draws": 100000, "seed": 20260923, "two_sided": true, "statistic": "document-weighted mean"},
+    "bootstrap": {"level": "family", "stratified_by_domain": true, "draws": 20000, "seed": 20260922, "interval": "percentile 95%", "statistic": "document-weighted mean of intact-family pseudo-sample"},
+    "decision_rule": "observed mean >= 0.010 and family-cluster two-sided p < 0.05",
+    "interpretation_warning": "The decision rule is not proof that the population improvement is at least 0.010",
+    "secondary": ["domain-specific effects", "equal-domain mean", "seed-specific effects, SD, range and leave-one-seed-out", "retrieval endpoints", "operational endpoints"],
+    "fixed_sample_and_stopping": true
+  },
+  "expected_matrix": {
+    "grid_training_jobs": 12,
+    "grid_validation_jobs": 12,
+    "grid_validation_scores": 192000,
+    "final_refit_jobs": 6,
+    "evaluation_retrieval_cells": 1092,
+    "evaluation_candidates": 21840,
+    "evaluation_reranker_instances": 7,
+    "evaluation_reranker_scores": 152880,
+    "evaluation_generation_records": 8736,
+    "primary_document_differences": 273
+  },
+  "budget": {
+    "unit": "allocated_A100_hours",
+    "planning_allocation": 18.0,
+    "operational_reserve": 2.0,
+    "hard_ceiling": 20.0,
+    "includes": ["loading", "I/O", "failed attempts", "technical retries"],
+    "excludes": ["completed development smoke"],
+    "stop_before_projected_breach": true
+  },
+  "successful_environment": {
+    "gpu": "NVIDIA A100-SXM4-40GB",
+    "python": "3.13.15",
+    "torch": "2.11.0+cu128",
+    "transformers": "5.16.1",
+    "peft": "0.20.0",
+    "accelerate": "1.14.0",
+    "huggingface_hub": "1.28.0",
+    "numpy": "2.1.3",
+    "retrieval_packages": {
+      "sentence-transformers": "3.4.1",
+      "faiss-cpu": "1.14.3",
+      "rank-bm25": "0.2.2",
+      "spacy": "3.8.14",
+      "langchain-text-splitters": "0.3.11"
+    },
+    "technical_repairs": ["split_membership_assertion_v1", "exclude_unused_incompatible_torchao_v1"]
+  },
+  "prohibitions": ["additional experiments", "scientific-choice changes", "Doc2Dial-based selection", "commit", "push", "publish", "sharing changes", "fabricated ratings", "manuscript submission"]
+}

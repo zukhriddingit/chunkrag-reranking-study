@@ -1,0 +1,8 @@
+ChunkRAG source and non-human aggregate companion
+Copyright 2026 Assylkhan Geniyat, Zukhriddin Fakhriddinov and Atharv Gulati, for their respective original contributions.
+
+Code, tools and protocols are licensed under Apache-2.0. Author-owned aggregate results, figures, documentation and descriptive metadata are licensed under CC-BY-4.0. See LICENSE.md and LICENSE_SCOPE.json for exact scope.
+
+This package is a selected companion, not a complete executed-model replay archive. Existing copied source files and scientific results are unchanged. Packaging, licensing and citation metadata were added or updated in local candidate v2. See CHANGELOG.md.
+
+TechQA, Doc2Dial, base models and their trademarks belong to their respective rights holders; their underlying content and weights are not distributed here. Existing applicable notices are preserved. These references do not imply endorsement.

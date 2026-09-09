@@ -1,0 +1,181 @@
+{
+  "schema_version": 2,
+  "protocol_id": "phase4_matched_hube_doc2dial_v2_post_smoke",
+  "status": "execution_ready_not_authorized",
+  "scientific_scope": "A shared-configuration complete-pipeline comparison of H, U, B, and E, with cross-dataset transfer from TechQA development supervision to public four-domain document-grounded Doc2Dial support dialogue.",
+  "phase3_boundary": {
+    "release_commit": "35d21a87c2868e0a932bebab5c08692a0b255e25",
+    "freeze_file_sha256": "8bbdb36118d1f1c083c4884f7e508127e5e26e3cb2669768c396dd0e27d5e405",
+    "freeze_identity": "3afc5085a2965d341df7d2ba492cd5a25d3ac29cc44da41c04a987bf2814a621",
+    "partition_sha256": "22a8042d85fc27cc5dedaff1a94e576f6e7859866f36bfcc7bb2d4357b9fe310",
+    "preserve_original_and_corrected_artifacts": true
+  },
+  "development_preprocessing": {
+    "policy": "label_blind_dedup_pair_prune_v1",
+    "B_training_input_sha256": "c11a5bb4541c68b3c466f12fadac3ddfde1c85fa8a2c9e28537a3a908fc45e13",
+    "E_training_input_sha256": "58a67253104ded82d5ecaa2ffae12f086102369a9296e01be8243579ad5c7144",
+    "deduplication": "Within question, choose a normalized-text representative using fused rank, chunker, chunk ID, document ID, and a label-free row hash; B/E grades are not consulted.",
+    "pair_filter": "Render the complete pinned-tokenizer Qwen training template, including its literal special tokens, with add_special_tokens=false. Prune each pair over 512 independently; retain a group only if its positive and at least one negative survive.",
+    "training_split": {
+      "B_groups": 2103,
+      "B_questions": 189,
+      "E_groups": 943,
+      "E_questions": 187,
+      "common_questions": 187
+    },
+    "refit": {
+      "B_groups": 4019,
+      "B_questions": 379,
+      "E_groups": 1799,
+      "E_questions": 376
+    }
+  },
+  "evaluation": {
+    "route": "B",
+    "dataset": "IBM Doc2Dial",
+    "version": "1.0.1",
+    "license": "CC BY 3.0",
+    "source_zip_sha256": "94499fa5259f69018d2458cb948552e7a05f424711a95a562bb9e816a515dc23",
+    "sample_size": 273,
+    "domain_counts": {
+      "dmv": 51,
+      "ssa": 77,
+      "studentaid": 50,
+      "va": 95
+    },
+    "selection": "All validation documents with at least one eligible user-to-immediately-following-agent transition; exactly one case per eligible document by the already-fixed minimum salted SHA-256 rule.",
+    "project_exposure": "Aggregate metadata and the private selected-case index were inspected in the CPU preflight; no model outcomes exist.",
+    "foundation_model_pretraining_exposure": "unknown",
+    "sample_and_stopping": "Exactly 273 fixed cases; no interim outcome inspection, outcome-based expansion, replacement, optional stopping, or post-outcome exclusion."
+  },
+  "dialogue_contract": {
+    "retrieval_query": "Dialogue history through and including the selected user turn, serialized with role prefixes in official-loader order.",
+    "generation_target": "The immediately following agent utterance from the Doc2Dial dialogue data, never the doc2dial_rc grounding-span answer.",
+    "primary_answer_metric": "agent-response token F1",
+    "secondary_answer_metrics": ["agent-response exact match", "grounding-span token F1"],
+    "evaluation_only": ["target agent response", "future turns", "reference spans and offsets", "gold-document metadata", "gold evidence grades", "doc2dial_rc answer"],
+    "inference_crop_selection_from_evaluation_references": false
+  },
+  "systems_and_controls": {
+    "systems": ["H", "U", "B", "E"],
+    "candidate_pool": 20,
+    "top_k": 4,
+    "chunkers": ["fixed_128", "fixed_254", "recursive_254", "sentence_254"],
+    "common_candidate_pool_required": true,
+    "reranker": {
+      "model": "Qwen/Qwen3-Reranker-0.6B",
+      "revision": "e61197ed45024b0ed8a2d74b80b4d909f1255473",
+      "instruction": "Given a technical-support question, rank passages by whether they contain sufficient evidence to answer it.",
+      "max_length": 512,
+      "dtype": "bfloat16"
+    },
+    "training": {
+      "lora": {"rank": 16, "alpha": 32, "dropout": 0.05, "bias": "none"},
+      "optimizer": "AdamW",
+      "weight_decay": 0.01,
+      "warmup_ratio": 0.1,
+      "learning_rates": [0.00005, 0.0001],
+      "grid_update_budgets": [227, 454, 681],
+      "refit_update_budgets_by_grid_budget": {"227": 431, "454": 862, "681": 1293},
+      "per_device_groups": 2,
+      "gradient_accumulation": 2,
+      "effective_groups_per_update": 4,
+      "max_negatives": 7,
+      "seeds": [20260904, 20260905, 20260906],
+      "loss": "For each intact positive-first group, compute final-token yes-minus-no pair scores, apply a temperature-1 softmax within that group, minimize target-index-zero cross entropy, then average group losses. Padding is attention-masked and group boundaries are explicit.",
+      "matching_rule": "B and E receive the same optimizer-update budget at each grid/refit setting. Their label-induced group counts and natural repetitions remain different; no arbitrary duplication or deletion equalizes them."
+    },
+    "shared_selection": "Show all 12 development-grid scores. Choose the single configuration maximizing the mean of B and E question-level validation evidence-NDCG@4; ties choose fewer updates, then lower learning rate. This is shared-configuration pipeline selection, not independent optimization and not isolation of only a label bit.",
+    "ndcg": "DCG@4 uses the returned top four grades; IDCG@4 uses the full common 20-candidate graded pool; zero IDCG returns 0.0.",
+    "generator": {
+      "model": "Qwen/Qwen3.5-9B",
+      "revision": "1eb6d84878284892ecfd4c3fb760ffbf34548234",
+      "dtype": "bfloat16",
+      "thinking": false,
+      "do_sample": false,
+      "temperature": 0.0,
+      "num_beams": 1,
+      "max_input_tokens": 1536,
+      "max_new_tokens": 512
+    }
+  },
+  "statistics_frozen_before_outcomes": {
+    "primary_estimand": "Finite-sample document-weighted mean E-minus-B agent-response token-F1 difference across 273 selected documents, after averaging the four chunkers and three paired training seeds within each document.",
+    "family_definition": "Within each domain, strip a terminal #<digits> suffix from the official document title, normalize surrounding whitespace, and prepend the domain. Cross-domain families are never merged.",
+    "family_inventory": {
+      "total_families": 235,
+      "cross_domain_normalized_title_collisions": 0,
+      "dmv": {"families": 51, "size_histogram": {"1": 51}},
+      "ssa": {"families": 41, "size_histogram": {"1": 15, "2": 25, "12": 1}},
+      "studentaid": {"families": 50, "size_histogram": {"1": 50}},
+      "va": {"families": 93, "size_histogram": {"1": 91, "2": 2}}
+    },
+    "sign_flip": {"level": "family", "two_sided": true, "draws": 100000, "seed": 20260923, "statistic": "document-weighted mean"},
+    "bootstrap": {"level": "family", "stratified_by_domain": true, "draws": 20000, "seed": 20260922, "interval": "percentile 95%", "statistic": "document-weighted mean after sampling intact families within domain"},
+    "assumptions": [
+      "Family score vectors are independent across families.",
+      "Under the sharp null, signs are exchangeable/symmetric at family level.",
+      "The outcome-independent title-family rule captures the material document dependencies.",
+      "The fixed sample and missing-output rules are obeyed."
+    ],
+    "decision_rule": "Observed mean >= 0.010 and family-cluster two-sided p < 0.05.",
+    "interpretation_warning": "This rule is not proof that the population improvement is at least 0.010; that claim would require a lower confidence bound above 0.010 or a prespecified minimum-effect test.",
+    "secondary": ["domain-specific effects", "equal-domain mean", "seed-specific effects, SD, range, and leave-one-seed-out analyses", "retrieval and operational endpoints"],
+    "planning_power": "At n=273, the TechQA proxy gives 77.8% power under independence and 70.0% under assumed ICC=0.3 for delta=0.010. These are planning scenarios, not measured properties of Doc2Dial."
+  },
+  "job_matrix_requiring_separate_approval": [
+    {"stage": "grid_training", "jobs": 12, "work": "B/E x two learning rates x three fixed update budgets"},
+    {"stage": "grid_validation_scoring", "jobs": 12, "candidate_scores": 192000},
+    {"stage": "final_refit", "jobs": 6, "work": "B/E x three paired seeds at the shared selected configuration"},
+    {"stage": "evaluation_retrieval", "jobs": 1, "rankings": 1092, "candidates": 21840},
+    {"stage": "evaluation_reranking", "system_instances": 7, "rankings": 7644, "candidate_scores": 152880},
+    {"stage": "evaluation_generation", "system_instances": 8, "complete_outputs": 8736},
+    {"stage": "frozen_analysis", "jobs": 1, "primary_document_differences": 273}
+  ],
+  "post_smoke_budget": {
+    "basis": "Smoke-measured cached load, training token throughput, reranking throughput, and generation throughput, combined with frozen preflight row/token counts. Retrieval remains an old-log extrapolation.",
+    "component_hours": {
+      "grid_training": 3.7641945402005277,
+      "grid_validation": 0.5876281299016207,
+      "evaluation_reranking": 0.4384634779073124,
+      "evaluation_generation": 4.027039640573106,
+      "evaluation_retrieval_old_log": 0.026,
+      "model_load_allowances": 0.007214410368333214
+    },
+    "refit_hours_by_selected_budget": {
+      "431_updates": 1.79630784092019,
+      "862_updates": 3.59261568184038,
+      "1293_updates": 5.388923522760571
+    },
+    "sequential_hours_by_selected_budget": {
+      "431_updates": 10.64684803987109,
+      "862_updates": 12.443155880791279,
+      "1293_updates": 14.23946372171147
+    },
+    "hours_with_25_percent_overhead": {
+      "431_updates": 13.308560049838862,
+      "862_updates": 15.5539448509891,
+      "1293_updates": 17.79932965213934
+    },
+    "recommended_allocation": "18 A100 GPU-hours; allow a 20-hour operational ceiling for Colab I/O and resumptions, then stop and report rather than expand automatically.",
+    "storage": "Plan 3-4 GiB of immutable final artifacts excluding model caches, plus 20-25 GiB transient exact-revision model cache. Keep one current resumable checkpoint per active job and an immutable terminal checkpoint; never overwrite a sealed terminal result.",
+    "limitations": "Training is extrapolated from only two updates with checkpoint-after-every-update; generation is extrapolated from 128 TechQA outputs, not the unknown Doc2Dial response-length distribution. Network model download, multi-hour thermal behavior, Drive stalls, and disconnect frequency are not measured."
+  },
+  "runtime_environment": {
+    "gpu": "NVIDIA A100-SXM4-40GB",
+    "observed_packages": {"python": "3.13.15", "torch": "2.11.0+cu128", "transformers": "5.16.1", "peft": "0.20.0", "accelerate": "1.14.0", "huggingface_hub": "1.28.0"},
+    "approved_repair_to_freeze": "exclude_unused_incompatible_torchao_v1 must remain limited to the unquantized BF16 adapter-construction path and must fail closed if a model is TorchAO-quantized."
+  },
+  "pre_execution_gate": [
+    "Obtain explicit approval for this exact bounded job matrix and Doc2Dial evaluation access.",
+    "Create a new content-addressed Phase 4 freeze covering code, configuration, input/index hashes, model revisions, environment, repair identities, seeds, prompts, row counts, statistics, and output namespaces.",
+    "Refuse execution if any frozen identity differs or any output namespace is nonempty.",
+    "Require complete output for every prescribed cell; retry only technical failures with identical parameters.",
+    "Do not inspect outcomes before the fixed matrix completes."
+  ],
+  "authorization": {
+    "approved_and_complete": ["CPU preflight", "label_blind_dedup_pair_prune_v1", "fixed Route B design", "eight-question development-only smoke"],
+    "not_approved": ["12-job GPU grid", "12 grid validation scoring jobs", "six final refits", "Doc2Dial retrieval", "Doc2Dial reranking", "Doc2Dial generation", "outcome analysis", "publishing", "sharing changes", "commit", "push"],
+    "exact_next_decision": "Approve or reject freezing and executing the listed Phase 4 matrix on the fixed 273 Doc2Dial cases with an 18 A100-hour planning allocation and 20-hour operational ceiling."
+  }
+}

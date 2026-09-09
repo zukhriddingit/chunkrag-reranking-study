@@ -1,0 +1,26 @@
+{
+  "source_snapshot_sha256": "8cfecd3162307b228c6217a32b7a39dcc42d86390cf5799a1140b1754d9d2794",
+  "models": {
+    "chunking_tokenizer": {
+      "model": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "tree_sha256": "52d4d7eba5fd4329b3abc125d8f152901610950673b3e9b675e702627b979256"
+    },
+    "dense_encoder": {
+      "model": "BAAI/bge-small-en-v1.5",
+      "revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+      "tree_sha256": "7e53b94a208b5122d08a75d479cb8d708796d116c776d597c81539689946d0e5"
+    },
+    "generator": {
+      "model": "Qwen/Qwen3.5-9B",
+      "revision": "1eb6d84878284892ecfd4c3fb760ffbf34548234",
+      "tree_sha256": "1419ce9ca8a2f80415305488620d2a986ed794699739d027fa24053feda884d2"
+    },
+    "reranker": {
+      "model": "Qwen/Qwen3-Reranker-0.6B",
+      "revision": "e61197ed45024b0ed8a2d74b80b4d909f1255473",
+      "tree_sha256": "ed72ae46c0ddbd276ae27f2733301f725043bdf141676da4c1f20a99c00e1cb7"
+    }
+  },
+  "weights_included": false
+}

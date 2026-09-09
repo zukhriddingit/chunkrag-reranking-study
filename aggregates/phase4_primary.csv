@@ -1,0 +1,2 @@
+comparison,documents,families,difference,CI_low,CI_high,p,success
+E minus B,273,235,-0.00221106334689,-0.00660970484306,0.00192028528122,0.312216877831,False

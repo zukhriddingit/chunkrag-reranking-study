@@ -1,0 +1,31 @@
+diff --git a/src/chunkrag/eaai_phase3/reserve_workflows.py b/src/chunkrag/eaai_phase3/reserve_workflows.py
+--- a/src/chunkrag/eaai_phase3/reserve_workflows.py
++++ b/src/chunkrag/eaai_phase3/reserve_workflows.py
+@@ -45,23 +45,24 @@ def evidence_metrics(
+     relevant_document_ids: list[str],
+ ) -> dict[str, float]:
+     top4 = candidates[:4]
+-    grades = [
++    all_grades = [
+         grade_candidate(
+             text=str(candidate["text"]),
+             document_id=str(candidate["document_id"]),
+             reference_answers=reference_answers,
+             relevant_document_ids=relevant_document_ids,
+         )
+-        for candidate in top4
++        for candidate in candidates
+     ]
++    top4_grades = all_grades[:4]
+     documents = {str(candidate["document_id"]) for candidate in top4}
+     relevant = set(relevant_document_ids)
+     coverage = len(documents & relevant) / len(relevant) if relevant else 0.0
+     return {
+-        "grade_ndcg_at_4": ndcg_at_k(grades, k=4),
+-        "answer_visibility_at_4": float(any(grade == 2 for grade in grades)),
++        "grade_ndcg_at_4": ndcg_at_k(all_grades, k=4),
++        "answer_visibility_at_4": float(any(grade == 2 for grade in top4_grades)),
+         "gold_document_coverage_at_4": coverage,
+-        "maximum_grade_at_4": float(max(grades, default=0)),
++        "maximum_grade_at_4": float(max(top4_grades, default=0)),
+     }

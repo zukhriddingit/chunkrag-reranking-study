@@ -1,0 +1,5 @@
+# Proposed data/code availability statement — internal draft
+
+The authors plan to release the study code, frozen configurations and permitted non-human aggregate results on GitHub with an archival snapshot on Zenodo. The authors have selected Apache-2.0 for the code/configurations and CC-BY-4.0 for aggregate results, figures and documentation, with scope specified per file. No public repository or archive identifier is available yet. Original benchmark data will be referenced through their upstream distributions. Identifiable human-evaluation records, condition mappings and per-case ratings will not be publicly released. Access to other restricted saved outputs remains subject to permissions and a defined access mechanism.
+
+Do not use this future-tense planning text as a completed availability claim at submission. Replace it with the actual approved locations, versions/licenses and precise nonsharing reasons. Do not promise on-request access before it exists. A public source-and-aggregate companion does not by itself enable complete model-experiment reproduction.

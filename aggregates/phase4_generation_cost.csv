@@ -1,0 +1,2 @@
+scope,records,batches,generated_tokens,execution_seconds,tokens_per_second,records_per_second,cold_load_seconds,peak_allocated_GiB
+last recovery session only,300,75,29912,614.542582006,48.6736002937,0.488167962293,231.406797614,18.1955113411

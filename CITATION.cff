@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: Source-and-aggregate companion staged privately for v1.0.0. Per-file license assignments are
+  in LICENSE.md and LICENSE_SCOPE.json; the licenses are not interchangeable alternatives. DOI reservation
+  is pending; no publication has occurred.
+type: software
+title: 'ChunkRAG: source and non-human aggregate companion'
+version: 1.0.0
+authors:
+- family-names: Geniyat
+  given-names: Assylkhan
+  affiliation: Boston University
+- family-names: Fakhriddinov
+  given-names: Zukhriddin
+  affiliation: Boston University
+- family-names: Gulati
+  given-names: Atharv
+  affiliation: Boston University
+abstract: Selected source references, configurations and non-human aggregate results for separate ChunkRAG
+  technical-support studies. The package is not a complete model-experiment replay archive. Licenses apply
+  by file as specified in LICENSE.md, not as interchangeable alternatives.
+keywords:
+- retrieval-augmented generation
+- reranking
+- external transfer
+- reproducibility
+license-url: https://github.com/zukhriddingit/chunkrag-reranking-study/blob/main/LICENSE.md
+repository-code: https://github.com/zukhriddingit/chunkrag-reranking-study

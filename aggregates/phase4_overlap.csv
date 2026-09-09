@@ -1,0 +1,5 @@
+measure,max,mean,median,min,n,p95
+identical_order,1,0.0537240537241,0,0,3276,1
+identical_set,1,0.200244200244,0,0,3276,1
+intersection_fraction,1,0.674679487179,0.75,0,3276,1
+jaccard,1,0.555846270132,0.6,0,3276,1

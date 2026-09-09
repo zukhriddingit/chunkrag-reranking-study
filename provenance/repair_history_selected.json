@@ -1,0 +1,42 @@
+{
+  "representation": "Selected metadata from sealed snapshot; original raw remote repair SHA 61255a9a8fa980dd5487949510af2e9914036b75549f6ef6d844626650da74ac; earlier completed checks reused",
+  "source_snapshot_sha256": "8cfecd3162307b228c6217a32b7a39dcc42d86390cf5799a1140b1754d9d2794",
+  "selected_fields": {
+    "classification": "cpu_only_operational_finalization_repair_v3",
+    "analysis_recomputed": false,
+    "scientific_choices_changed": false,
+    "original_outputs_overwritten": false,
+    "repair": "Require every frozen scientific file to match exactly and permit only exact observed AppleDouble sidecars paired to those files.",
+    "preservation": {
+      "archive_metadata_extra_paths": [
+        "private_inputs/._B_refit_groups.jsonl",
+        "private_inputs/._B_training_groups.jsonl",
+        "private_inputs/._B_validation_labels.jsonl",
+        "private_inputs/._E_refit_groups.jsonl",
+        "private_inputs/._E_training_groups.jsonl",
+        "private_inputs/._E_validation_labels.jsonl",
+        "private_inputs/._doc2dial_selection_index.jsonl"
+      ],
+      "archive_metadata_extras_ignored": 7,
+      "archive_metadata_identity": {
+        "bytes_each": 163,
+        "sha256_each": "f65a9546c68d7bfe47fd7fb0ba9da5c8ec599ca8c4d720533d0a81beaea03a35"
+      },
+      "archive_metadata_policy": "Ignore only exact AppleDouble sidecars paired to frozen files; never ignore a missing or changed frozen scientific file.",
+      "frozen_private_input_files": 7,
+      "frozen_private_input_tree_sha256": "a526a4558ac01eef4e840dec05d4a7cf4bb0a14bd605f85026983e03b33aa4e1",
+      "frozen_private_inputs_unchanged": true,
+      "phase3_local_pre_execution": {
+        "changed": 0,
+        "files_rehashed": 984,
+        "missing": 0,
+        "tree_sha256": "febeaaa1091a09cd7e7441803e44f7db328d36f2551b51cb3466e39169b8e5da"
+      },
+      "unfiltered_extracted_file_count": 14,
+      "unfiltered_extracted_tree_sha256": "bb86d957fb171ac944a1c0439a4aedfcce65a56ae5a4896363fa235246050198"
+    },
+    "executed_v5_source_sha256": "1c494c06e651eb146479b22ff9785becab9e47c19af27c3b522988c2f5b4d558",
+    "cpu_finalizer_v3_source_sha256": "5c34176961ae4521ba9e637870bdb461da0f9cafd7f4c88eb005aef119b0a093"
+  },
+  "replay_limit": "Executed v5 and finalizer source bytes are not supplied in this local candidate. Their recorded hashes do not substitute for source code."
+}
