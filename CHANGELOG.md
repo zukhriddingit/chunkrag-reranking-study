@@ -12,3 +12,7 @@ All changes are in a new directory. The approved v1 ZIP, sealed synthesis, manus
 ## v1.0.0 private staging checkpoint
 
 Corrected CFF license-array OR semantics by using license-url for the existing file-scoped policy; version and actual private repository metadata added. Full official CFF 1.2.0 schema validation passed. Scientific contents and per-file licenses are unchanged. DOI-dependent finalization remains pending; this is not a published release.
+
+## DOI-bearing release candidate
+
+Reserved 10.5281/zenodo.22695835 in an unpublished manually managed Zenodo draft. Updated citation, README and destination metadata; refreshed exact payload manifest. Scientific files and license assignments are unchanged. Publication still requires final explicit approval.

@@ -1,21 +1,21 @@
 {
-  "classification": "Exact private staging inventory; NOT final release seal. DOI reservation pending.",
+  "classification": "Exact DOI-bearing candidate payload; sealed for author approval, not published",
   "files": {
     "CHANGELOG.md": {
-      "sha256": "b79a0cd7330f0e5d398a4318ac5af5c463d1dd0599752a7a1e76fe437cc67c9e",
-      "bytes": 1373
+      "sha256": "522cc1f0683a3fdfb314a37797ab20baaac156481ce9ba6c134484b45734dbd0",
+      "bytes": 1683
     },
     "CITATION.cff": {
-      "sha256": "bbf197e0f07475dde9d431386a4df2e64b02df71d617c394d197b9617f02415b",
-      "bytes": 1167
+      "sha256": "03409f190123c6f2c83df99fbc1363e105273a74caf7a58079cda01318d6a838",
+      "bytes": 1098
     },
     "DATA_AVAILABILITY_DRAFT.md": {
       "sha256": "6fd16f81a30e615898da36cf3a211dc5aaed6b38d33eb09fd9f4c483d541dca5",
       "bytes": 1082
     },
     "DESTINATION_PLAN.md": {
-      "sha256": "c7a88d84c3242374b30f81fadaac6b24b5d40ed0be7d5350366e6c7686f7b197",
-      "bytes": 1884
+      "sha256": "2e7853c7d00949dc8c51158c39c0dc970836d43d379a7ea7e431fe5c17a086ca",
+      "bytes": 855
     },
     "LICENSE.md": {
       "sha256": "efa62110888393f76a09d9f011b4037877801672672e391470520edc1132f30f",
@@ -38,8 +38,8 @@
       "bytes": 897
     },
     "README.md": {
-      "sha256": "4266bc0cd942ce8849ec097338d500967d464c324fdea9230547ebe1b169d33c",
-      "bytes": 4058
+      "sha256": "7d3c6d15f6df984fa774668282dd8177b453317aa19a49103f552d78bd7ae725",
+      "bytes": 4005
     },
     "RELEASE_ACCESS_MATRIX.md": {
       "sha256": "d90527149fadfa297162ac28830f33009ff3e4b0c46aa3c4994227ef36bc8ea6",

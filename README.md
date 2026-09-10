@@ -1,6 +1,6 @@
 # ChunkRAG v1.0.0 staging — PRIVATE / NOT PUBLISHED
 
-Prepared for author review only. The authors approved Apache-2.0 for code/configurations and CC-BY-4.0 for aggregate results, figures and documentation. See LICENSE.md for scope. The private staging repository is https://github.com/zukhriddingit/chunkrag-reranking-study. Zenodo is planned as a manually managed draft; its account and DOI remain unresolved because the service is currently inaccessible. No public release has occurred. This is a selected source-and-aggregate companion, not the complete experiment archive.
+Prepared for author review only. The authors approved Apache-2.0 for code/configurations and CC-BY-4.0 for aggregate results, figures and documentation. See LICENSE.md for scope. The private staging repository is https://github.com/zukhriddingit/chunkrag-reranking-study. Zenodo draft: https://zenodo.org/uploads/22695835 in the author-designated account. Reserved DOI: 10.5281/zenodo.22695835 (not registered until publication). No public release has occurred. This is a selected source-and-aggregate companion, not the complete experiment archive.
 
 ## Included
 
@@ -30,4 +30,4 @@ Human-evaluation material is intentionally excluded from this release candidate 
 
 See LICENSE.md, CITATION.cff, DESTINATION_PLAN.md, RELEASE_ACCESS_MATRIX.md, REPRODUCIBILITY.md, RIGHTS_AND_RELEASE_GATES.md and DATA_AVAILABILITY_DRAFT.md. Full source traceability appears in provenance/source_identities.json; the exact shipped inventory is PAYLOAD_MANIFEST.json. Source hashes identify bytes, not licenses or human provenance.
 
-This is a private staging checkpoint. Do not treat its manifest as the final DOI-bearing distribution seal. A real DOI must be reserved and inserted before final release sealing. No automatic GitHub-to-Zenodo publication route is configured by this workflow.
+This is the DOI-bearing release candidate sealed for final author approval; it remains unpublished. No automatic GitHub-to-Zenodo publication route is configured by this workflow.
